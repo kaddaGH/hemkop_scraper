@@ -11,7 +11,7 @@ if current_page == 0 and number_of_pages > 1
   nbr_products_pg1 = products.length
   step_page = 1
   while step_page < number_of_pages
-    break
+
     pages << {
         page_type: 'products_search',
         method: 'GET',
@@ -40,17 +40,17 @@ products.each_with_index do |product, i|
   pages << {
       page_type: 'product_details',
       method: 'GET',
-      url: "https://www.hemkop.se/axfood/rest/p/#{product['code']}",
+      url: "https://www.hemkop.se/axfood/rest/p/#{product['code']}?search_term=#{page['vars']['search_term']}&page=#{current_page + 1}&rank=#{ i + 1}",
       vars: {
           'input_type' => page['vars']['input_type'],
           'search_term' => page['vars']['search_term'],
           'product_rank' => i + 1,
-          'page' => current_page+1,
-          'nbr_products_pg1' => nbr_products_pg1
+          'page' => current_page + 1,
+          'nbr_products_pg1' => nbr_products_pg1,
+          'scrape_url_nbr_products' => scrape_url_nbr_products
+
       }
   }
-
-
 
 
 end
