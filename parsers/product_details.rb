@@ -62,7 +62,7 @@ in_pack ||= '1'
 
 product_details = {
     # - - - - - - - - - - -
-    RETAILER_ID: '101',
+    RETAILER_ID: '100',
     RETAILER_NAME: 'hemkop',
     GEOGRAPHY_NAME: 'SE',
     # - - - - - - - - - - -
